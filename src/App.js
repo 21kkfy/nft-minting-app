@@ -129,27 +129,54 @@ function App() {
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
-    blockchain.smartContract.methods
-      .freeMint(mintAmount)
-      .send({
-        gasLimit: String(totalGasLimit),
-        to: CONFIG.CONTRACT_ADDRESS,
-        from: blockchain.account,
-        value: totalCostWei,
-      })
-      .once("error", (err) => {
-        console.log(err);
-        setFeedback("Sorry, something went wrong please try again later.");
-        setClaimingNft(false);
-      })
-      .then((receipt) => {
-        console.log(receipt);
-        setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
-        );
-        setClaimingNft(false);
-        dispatch(fetchData(blockchain.account));
-      });
+    /* TODO: */
+    if (Date.parse("18 Jul 2022 19:25:00 GMT") < 1658344893) {
+      console.log(Date.parse("18 Jul 2022 19:25:00 GMT") < 1658344893);
+      blockchain.smartContract.methods
+        .freeMint(mintAmount)
+        .send({
+          gasLimit: String(totalGasLimit),
+          to: CONFIG.CONTRACT_ADDRESS,
+          from: blockchain.account,
+          value: totalCostWei,
+        })
+        .once("error", (err) => {
+          console.log(err);
+          setFeedback("Sorry, something went wrong please try again later.");
+          setClaimingNft(false);
+        })
+        .then((receipt) => {
+          console.log(receipt);
+          setFeedback(
+            `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Kalao.io to view it.`
+          );
+          setClaimingNft(false);
+          dispatch(fetchData(blockchain.account));
+        });
+    }
+    else {
+      blockchain.smartContract.methods
+        .whitelistFreeMint(["0x5569f80985268195a3310e5dca03c431d12b9fa6f9de39f63b95fd47d43d4806", "0x12b81aacfb5f786c82f3e2135388fa5ea37b2ce2474d878b24a73246f9cd342e"], mintAmount)
+        .send({
+          gasLimit: String(totalGasLimit),
+          to: CONFIG.CONTRACT_ADDRESS,
+          from: blockchain.account,
+          value: totalCostWei,
+        })
+        .once("error", (err) => {
+          console.log(err);
+          setFeedback("Sorry, something went wrong please try again later.");
+          setClaimingNft(false);
+        })
+        .then((receipt) => {
+          console.log(receipt);
+          setFeedback(
+            `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Kalao.io to view it.`
+          );
+          setClaimingNft(false);
+          dispatch(fetchData(blockchain.account));
+        });
+    }
   };
 
   const decrementMintAmount = () => {
