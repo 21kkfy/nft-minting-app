@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
-  "SCAN_LINK": "https://polygonscan.com/token/0x0b18b900F7375AABDa00EEaC988116C33fb05BD2",
+  "CONTRACT_ADDRESS": "0xa411c4752CfCA8df3e05aacfEe7d6cc5C308E459",
+  "SCAN_LINK": "<INSERT-SNOWTRACE-LINK>",
   "NETWORK": {
-    "NAME": "Polygon",
-    "SYMBOL": "Matic",
-    "ID": 137
+    "NAME": "Avalanche",
+    "SYMBOL": "AVAX",
+    "ID": 43113
   },
-  "NFT_NAME": "The Stripes NFT",
-  "SYMBOL": "TSNFT",
-  "MAX_SUPPLY": 992,
-  "WEI_COST": 4000000000000000000,
-  "DISPLAY_COST": 4,
+  "NFT_NAME": "Ordinary People",
+  "SYMBOL": "OP",
+  "MAX_SUPPLY": 555,
+  "WEI_COST": 0,
+  "DISPLAY_COST": "0",
   "GAS_LIMIT": 285000,
-  "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/the-stripes-nft",
+  "MARKETPLACE": "Kalao",
+  "MARKETPLACE_LINK": "<INSERT-MARKETPLACE-LINK>",
   "SHOW_BACKGROUND": true
 }
